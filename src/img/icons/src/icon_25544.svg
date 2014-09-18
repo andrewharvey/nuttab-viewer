@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="100px" height="100px" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 100 100">
+ <defs>
+  <style type="text/css">
+   
+    .str0 {stroke:black;stroke-width:0.900007}
+    .fil1 {fill:none}
+    .fil0 {fill:black}
+   
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_378368584">
+   <path id="_380240840" class="fil0" d="M46.5972 22.7399c24.6864,1.99017 37.3999,-17.406 43.5098,-4.53783 6.10989,12.8694 -25.3596,55.126 -52.9162,56.8457 -27.5565,1.7197 -32.7369,-11.7816 -32.7912,-27.5683 -0.0543311,-15.7856 17.51,-26.7286 42.1976,-24.7396zm-24.9722 17.7084l14.5915 4.09964 26.8797 -12.4607 1.65119 4.2898 -26.5585 12.5233 -4.35358 12.4489 1.29922 -14.0151 -13.5096 -6.88588z"/>
+   <path id="_380243240" class="fil0" d="M94.3378 28.349c11.9434,33.8932 -64.3174,80.3758 -79.2042,45.5425 27.3215,15.5399 67.3222,-13.5166 79.2042,-45.5425z"/>
+   <polygon id="_206167344" class="fil1 str0" points="21.625,40.4483 36.2164,44.548 63.0962,32.0873 64.7474,36.3771 38.1889,48.9004 33.8353,61.3493 35.1345,47.3342 "/>
+  </g>
+ </g>
+</svg>
