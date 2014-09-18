@@ -1,0 +1,214 @@
+<!-- This file is licenced CC0 http://creativecommons.org/publicdomain/zero/1.0/ -->
+<div class="panel panel-default">
+    <div class="panel-body">
+        <h2>{{name}}{{#if scientific_name}} <small>{{scientific_name}}</small>{{/if}}</h2>
+        {{#if optional_name}}<h3>{{optional_name}}</h3>{{/if}}
+        <p><img height="24" src="img/icons/32/{{food_group_code}}.png"></img> {{food_group}}{{#if sub_group}} &gt; {{sub_group}}{{/if}}</p>
+        <p><strong>Edible Portion:</strong> {{edible_portion}} | <strong>Inedible Portion:</strong> {{inedible_portion}}</p>
+        <p class="lead">{{description}}<small><a id="sampling-details-link" href="#" tabindex="0" data-toggle="popover" data-trigger="focus" title="Sampling Details" data-placement="right" data-content="{{sampling_details}}"><sup>[Sampling Details]</sup></a></small></p>
+        <!--
+            <button id="sampling-details-button" type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-trigger="focus" title="Sampling Details" data-placement="right" data-content="{{sampling_details}}">
+            Sampling Details
+            </button>
+        -->
+        <!--<small>{{sampling_details}}</small>-->
+        {{#if ingredients}}
+        <h3>Ingredients</h3>
+        {{#list ingredients}}{{ingredient_name}} ({{ingredient_weight}}){{/list}}
+        {{/if}}
+        <h3>Nutrients</h3>
+        <table class="table table-striped table-hover table-condensed nutrients">
+            <thead>
+                <tr>
+                    <th>Nutrient</th>
+                    {{#if fnpw}}<th>Per 100g</th>{{/if}}
+                    {{#if fnpv}}<th>Per 100mL</th>{{/if}}
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{nutrient.MOIS.description}}</td>
+                    {{#if fnpv}}
+                        <td>
+                            {{#if fnpw.MOIS}}
+                                {{fnpw.MOIS}} {{nutrient.MOIS.scale}}
+                            {{/if}}
+                        </td>
+                    {{/if}}
+                    {{#if fnpv}}
+                        <td>
+                            {{#if fnpv.MOIS}}
+                                {{fnpv.MOIS}} {{nutrient.MOIS.scale}}
+                            {{/if}}
+                        </td>
+                    {{/if}}
+                </tr>
+                <tr class="nutrient-group">
+                    <td colspan="3">Macronutrients</td>
+                </tr>
+                <tr>
+                    <td>{{nutrient.ENERGY-04DF.description}}</td>
+                    <td>
+                        {{#if fnpw.ENERGY-04DF}}
+                            {{fnpw.ENERGY-04DF}} {{nutrient.ENERGY-04DF.scale}}
+                        {{/if}}
+                    </td>
+                    {{#if fnpv}}<td>{{fnpv.ENERGY-04DF}}</td>{{/if}}
+                </tr>
+                <tr>
+                    <td>{{nutrient.PROT.description}}</td>
+                    <td>{{fnpw.PROT}} {{nutrient.PROT.scale}}</td>
+                    {{#if fnpv}}<td>{{fnpv.PROT}}</td>{{/if}}
+                </tr>
+                <tr>
+                    <td>{{nutrient.FAT.description}}</td>
+                    <td>{{fnpw.FAT}} {{nutrient.FAT.scale}}</td>
+                    {{#if fnpv}}<td>{{fnpv.FAT}}</td>{{/if}}
+                </tr>
+                <tr>
+                    <td class="class2">{{nutrient.TOTALSATURATFD-04.description}}</td>
+                    <td>{{fnpw.TOTALSATURATFD-04}} {{nutrient.TOTALSATURATFD-04.scale}}</td>
+                    {{#if fnpv}}<td>{{fnpv.TOTALSATURATFD-04}}</td>{{/if}}
+                </tr>
+                <tr>
+                    <td class="class2">{{nutrient.TOTAL_MONOUNSATURATED_FAT_FD.description}}</td>
+                    <td>{{fnpw.TOTAL_MONOUNSATURATED_FAT_FD}} {{nutrient.TOTAL_MONOUNSATURATED_FAT_FD.scale}}</td>
+                    {{#if fnpv}}<td>{{fnpv.TOTAL_MONOUNSATURATED_FAT_FD}}</td>{{/if}}
+                </tr>
+                <tr>
+                    <td class="class2">{{nutrient.TOTAL_POLYUNSATURATED_FAT_FD.description}}</td>
+                    <td>{{fnpw.TOTAL_POLYUNSATURATED_FAT_FD}} {{nutrient.TOTAL_POLYUNSATURATED_FAT_FD.scale}}</td>
+                    {{#if fnpv}}<td>{{fnpv.TOTAL_POLYUNSATURATED_FAT_FD}}</td>{{/if}}
+                </tr>
+                <tr>
+                    <td>{{nutrient.AVAILCHOCNS.description}}</td>
+                    <td>{{fnpw.AVAILCHOCNS}} {{nutrient.AVAILCHOCNS.scale}}</td>
+                    {{#if fnpv}}<td>{{fnpv.AVAILCHOCNS}}</td>{{/if}}
+                </tr>
+                <tr>
+                    <td class="class2">{{nutrient.TOTALSUGARS.description}}</td>
+                    <td>{{fnpw.TOTALSUGARS}} {{nutrient.TOTALSUGARS.scale}}</td>
+                    {{#if fnpv}}<td>{{fnpv.TOTALSUGARS}}</td>{{/if}}
+                </tr>
+                <tr>
+                    <td>{{nutrient.AOACDFTOTW.description}}</td>
+                    <td>
+                        {{#if fnpw.AOACDFTOTW}}
+                            {{fnpw.AOACDFTOTW}} {{nutrient.AOACDFTOTW.scale}}
+                        {{/if}}
+                    </td>
+                    {{#if fnpv}}<td>{{fnpv.AOACDFTOTW}}</td>{{/if}}
+                </tr>
+                <tr class="nutrient-group">
+                    <td colspan="3">Minerals &amp; trace elements</td>
+                </tr>
+                <tr>
+                    <td>{{nutrient.CA.description}}</td>
+                    <td>{{fnpw.CA}} {{nutrient.CA.scale}}</td>
+                    {{#if fnpv}}<td>{{fnpv.CA}}</td>{{/if}}
+                </tr>
+                <tr>
+                    <td>{{nutrient.CR.description}}</td>
+                    <td>{{fnpw.CR}} {{nutrient.CR.scale}}</td>
+                    {{#if fnpv}}<td>{{fnpv.CR}}</td>{{/if}}
+                </tr>
+                <tr>
+                    <td>{{nutrient.CU.description}}</td>
+                    <td>{{fnpw.CU}} {{nutrient.CU.scale}}</td>
+                    {{#if fnpv}}<td>{{fnpv.CU}}</td>{{/if}}
+                </tr>
+                <tr>
+                    <td>{{nutrient.F.description}}</td>
+                    <td>{{fnpw.F}} {{nutrient.F.scale}}</td>
+                    {{#if fnpv}}<td>{{fnpv.F}}</td>{{/if}}
+                </tr>
+                <tr>
+                    <td>{{nutrient.IODINE.description}}</td>
+                    <td>{{fnpw.IODINE}} {{nutrient.IODINE.scale}}</td>
+                    {{#if fnpv}}<td>{{fnpv.IODINE}}</td>{{/if}}
+                </tr>
+                <tr>
+                    <td>{{nutrient.FE.description}}</td>
+                    <td>{{fnpw.FE}} {{nutrient.FE.scale}}</td>
+                    {{#if fnpv}}<td>{{fnpv.FE}}</td>{{/if}}
+                </tr>
+                <tr>
+                    <td>{{nutrient.MG.description}}</td>
+                    <td>{{fnpw.MG}} {{nutrient.MG.scale}}</td>
+                    {{#if fnpv}}<td>{{fnpv.MG}}</td>{{/if}}
+                </tr>
+                <tr>
+                    <td>{{nutrient.MN.description}}</td>
+                    <td>{{fnpw.MN}} {{nutrient.MN.scale}}</td>
+                    {{#if fnpv}}<td>{{fnpv.MN}}</td>{{/if}}
+                </tr>
+                <tr>
+                    <td>{{nutrient.MO.description}}</td>
+                    <td>{{fnpw.MO}} {{nutrient.MO.scale}}</td>
+                    {{#if fnpv}}<td>{{fnpv.MO}}</td>{{/if}}
+                </tr>
+                <tr>
+                    <td>{{nutrient.P.description}}</td>
+                    <td>{{fnpw.P}} {{nutrient.P.scale}}</td>
+                    {{#if fnpv}}<td>{{fnpv.P}}</td>{{/if}}
+                </tr>
+                <tr>
+                    <td>{{nutrient.K.description}}</td>
+                    <td>{{fnpw.K}} {{nutrient.K.scale}}</td>
+                    {{#if fnpv}}<td>{{fnpv.K}}</td>{{/if}}
+                </tr>
+                <tr>
+                    <td>{{nutrient.SE.description}}</td>
+                    <td>{{fnpw.SE}} {{nutrient.SE.scale}}</td>
+                    {{#if fnpv}}<td>{{fnpv.SE}}</td>{{/if}}
+                </tr>
+                <tr>
+                    <td>{{nutrient.NA.description}}</td>
+                    <td>{{fnpw.NA}} {{nutrient.NA.scale}}</td>
+                    {{#if fnpv}}<td>{{fnpv.NA}}</td>{{/if}}
+                </tr>
+                <tr>
+                    <td>{{nutrient.ZN.description}}</td>
+                    <td>{{fnpw.ZN}} {{nutrient.ZN.scale}}</td>
+                    {{#if fnpv}}<td>{{fnpv.ZN}}</td>{{/if}}
+                </tr>
+                <tr class="nutrient-group">
+                    <td colspan="3">Vitamins</td>
+                </tr>
+                <tr>
+                    <td>{{nutrient.VITC.description}}</td>
+                    <td>{{fnpw.VITC}} {{nutrient.VITC.scale}}</td>
+                    {{#if fnpv}}<td>{{fnpv.VITC}}</td>{{/if}}
+                </tr>
+                <tr>
+                    <td>{{nutrient.FOLATETOT.description}}</td>
+                    <td>{{fnpw.FOLATETOT}} {{nutrient.FOLATETOT.scale}}</td>
+                    {{#if fnpv}}<td>{{fnpv.FOLATETOT}}</td>{{/if}}
+                </tr>
+                <tr>
+                    <td>{{nutrient.B2.description}}</td>
+                    <td>{{fnpw.B2}} {{nutrient.B2.scale}}</td>
+                    {{#if fnpv}}<td>{{fnpv.B2}}</td>{{/if}}
+                </tr>
+                <tr>
+                    <td>{{nutrient.NIACIN_EQUIVALENTS.description}}</td>
+                    <td>{{fnpw.NIACIN_EQUIVALENTS}} {{nutrient.NIACIN_EQUIVALENTS.scale}}</td>
+                    {{#if fnpv}}<td>{{fnpv.NIACIN_EQUIVALENTS}}</td>{{/if}}
+                </tr>
+                <tr>
+                    <td>{{nutrient.B7.description}}</td>
+                    <td>{{fnpw.B7}} {{nutrient.B7.scale}}</td>
+                    {{#if fnpv}}<td>{{fnpv.B7}}</td>{{/if}}
+                </tr>
+                <tr class="nutrient-group">
+                    <td colspan="3">Other</td>
+                </tr>
+                <tr>
+                    <td>{{nutrient.LCW3TOTALFD.description}}</td>
+                    <td>{{fnpw.LCW3TOTALFD}} {{nutrient.LCW3TOTALFD.scale}}</td>
+                    {{#if fnpv}}<td>{{fnpv.LCW3TOTALFD}}</td>{{/if}}
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

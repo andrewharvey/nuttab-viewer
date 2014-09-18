@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+      This file is licenced CC0 http://creativecommons.org/publicdomain/zero/1.0/
+-->
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="NUTTAB Data Viewer and Visualisation">
+    <meta name="author" content="">
+
+    <title>NUTTAB</title>
+
+    <link href="lib/css/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/css/typeahead.css" rel="stylesheet">
+    <link href="lib/c3/c3.css" rel="stylesheet">
+
+    <link href="css/app.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h1>NUTTAB</h1>
+                <p class="lead">Food Nutrient Tables from Food Standards Australia</p>
+                <input id="food-search" type="text" class="form-control typeahead input-lg" placeholder="Search foods...">
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="food-details" class="col-lg-12 text-center">
+            </div>
+        </div>
+        
+        <p class="text-center">
+        <small><a href="img/icons/attribution.html">Icon Attribution</a> | <a href="https://github.com/andrewharvey/nuttab-viewer">Application Source</a></small>
+        </p>
+
+    </div>
+
+    <script src="lib/js/jquery-1.11.0.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+    <script src="lib/js/handlebars-v2.0.0.js"></script>
+    <script src="lib/js/typeahead.bundle.min.js"></script>
+    <script src="lib/d3/d3.min.js"></script>
+    <script src="lib/c3/c3.min.js"></script>
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
